@@ -54,7 +54,7 @@ spec:
         #image: ganga1980/fips-test:2.0.20231004-7
         #image: mcr.microsoft.com/cbl-mariner/base/core:2.0.20231004
         #image: ganga1980/fips-test:2.0-2
-        image: ganga1980/fips-test:2.0-8
+        image: ganga1980/fips-test:2.0-11
         imagePullPolicy: Always
         command: ["tail", "-f", "/dev/null"]
         env:
