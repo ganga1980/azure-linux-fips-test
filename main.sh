@@ -6,6 +6,8 @@ endTime=$(date +%s)
 elapsed=$((endTime-startTime))
 echo "startup script took: $elapsed seconds"
 
+cat packages_version.txt
+
 
 sleep inf &
 wait
