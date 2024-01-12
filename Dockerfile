@@ -11,6 +11,8 @@ ENV tmpdir /opt
 
 RUN tdnf clean all
 RUN tdnf repolist --refresh
+# RUN tdnf install -y curl busybox && rm -rf /var/lib/apt/lists/*
+# for repro uncomment this line and comment the above line
 RUN tdnf install -y openssl curl busybox && rm -rf /var/lib/apt/lists/*
 RUN mkdir /busybin && busybox --install /busybin
 
@@ -35,7 +37,10 @@ COPY --from=builder /busybin /busybin
 COPY --from=builder /usr/bin/curl /usr/bin/curl
 
 
-# curl dependencies updates for 2.0.20231130
+# curl dependencies
+# COPY --from=builder /lib/lib*.so.* /lib/
+# COPY --from=builder /usr/lib/lib*.so.*  /usr/lib/
+
 COPY --from=builder /lib/libcurl.so.4 /lib/libz.so.1 /lib/libc.so.6 /lib/libnghttp2.so.14 /lib/libssl.so.1.1 /lib/libssh2.so.1 /lib/libcrypto.so.1.1 /lib/libgssapi_krb5.so.2 /lib/libzstd.so.1 /lib/
 COPY --from=builder /usr/lib/libkrb5.so.3 /usr/lib/libk5crypto.so.3 /usr/lib/libcom_err.so.2 /usr/lib/libkrb5support.so.0 /usr/lib/libresolv.so.2 /usr/lib/
 
