@@ -12,7 +12,7 @@ ENV tmpdir /opt
 RUN tdnf clean all
 RUN tdnf repolist --refresh
 # RUN tdnf install -y curl busybox && rm -rf /var/lib/apt/lists/*
-# for repro uncomment this line and comment the above line
+# openssl self test failures can be reproed including "openssl" tdnf install and removing the openssl disappears the issue
 RUN tdnf install -y openssl curl busybox && rm -rf /var/lib/apt/lists/*
 RUN mkdir /busybin && busybox --install /busybin
 
