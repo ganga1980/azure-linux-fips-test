@@ -48,13 +48,8 @@ spec:
       serviceAccountName: app-service-account
       containers:
       - name: app-container
-        #image: mcr.microsoft.com/cbl-mariner/base/core:2.0.20231130 #2.0.20231130
-        #image: mcr.microsoft.com/cbl-mariner/base/core:2.0.20231115
-        #image: ganga1980/fips-test:2.0.20231004-4
-        #image: ganga1980/fips-test:2.0.20231004-7
-        #image: mcr.microsoft.com/cbl-mariner/base/core:2.0.20231004
-        #image: ganga1980/fips-test:2.0-2
-        image: ganga1980/fips-test:2.0-11
+        image: ganga1980/fips-test:2.0.20231130 # with base & distroless version 2.0.20231130
+        # image: ganga1980/fips-test:2.0.20240112 # with base & distroless version 2.0.20240112
         imagePullPolicy: Always
         command: ["tail", "-f", "/dev/null"]
         env:
