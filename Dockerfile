@@ -7,8 +7,8 @@ ARG MARINER_BASE_IMAGE=mcr.microsoft.com/cbl-mariner/base/core:2.0.20231130
 ARG MARINER_DISTROLESS_IMAGE=mcr.microsoft.com/cbl-mariner/distroless/base:2.0.20231130
 
 ## This issue doesnt repro with latest image: 2.0.20240112
-ARG MARINER_BASE_IMAGE=mcr.microsoft.com/cbl-mariner/base/core:2.0.20240112
-ARG MARINER_DISTROLESS_IMAGE=mcr.microsoft.com/cbl-mariner/distroless/base:2.0.20240112
+# ARG MARINER_BASE_IMAGE=mcr.microsoft.com/cbl-mariner/base/core:2.0.20240112
+# ARG MARINER_DISTROLESS_IMAGE=mcr.microsoft.com/cbl-mariner/distroless/base:2.0.20240112
 
 FROM ${MARINER_BASE_IMAGE} AS builder
 
